@@ -1,0 +1,44 @@
+﻿@model List<Persona>
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <title>Fabbri Manuel 5I XMLReadWrite2</title>
+</head>
+
+
+<body>
+
+
+    <br />
+    <h1> XML Read-Write </h1>
+
+    <br />
+    <br />
+
+    @using (Html.BeginForm("AddPredefinito", "Default", FormMethod.Post))
+    {
+        <button type="submit" name="btnPredefinito"> Add </button>
+    }
+
+
+    <table class="table table-bordered" border="1">
+        <centre>
+
+            @foreach (Persona m in Model)
+            {
+                <tr>
+                    <td>@m.Nome_C</td>
+                    <td>@m.Cognome_C</td>
+                    <td>@m.Number_C</td>
+                    <td>@m.Indirizzo_C</td>
+                </tr>
+            }
+
+        </centre>
+    </table>
+</body>
+</html>
+

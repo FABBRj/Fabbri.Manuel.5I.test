@@ -1,0 +1,71 @@
+﻿@model List<Persona>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Nuovo Contatto</title>
+</head>
+<body>
+    <br /><br />
+    <div class="col-sm-3">
+        @using (Html.BeginForm("Edit", "Index", FormMethod.Post))
+        {
+            <table class="table table-striped">
+                <tr>
+                    <th>* Nome: </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Nome_C, new { required = "required" })
+                    </td>
+                </tr>
+                <tr>
+                    <th>* Cognome: </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Cognome, new { required = "required" })
+                    </td>
+                </tr>
+                <tr>
+                    <th>Indirizzo: </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Indirizzo)
+                    </td>
+                </tr>
+                <tr>
+                    <th>Emails (separati da virgola): </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Emails)
+                    </td>
+                </tr>
+                <tr>
+                    <th>Siti Web (separati da virgola): </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.SitiWeb)
+                    </td>
+                </tr>
+                <tr>
+                    <th>Numeri Cellulare (separati da virgola): </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.NumeriCellulare)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <a href="/Default/Index" class="btn btn-info btn-lg">
+                            <span class="glyphicon glyphicon-arrow-left"></span> Indietro
+                        </a>
+                    </td>
+                    <td>
+                        <button type="submit" name="ButtonAggiungi" class="btn btn-primary">AGGIUNGI CONTATTO</button>
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>
+
